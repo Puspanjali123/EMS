@@ -50,7 +50,7 @@ const addEmployee = async (req, res) => {
     const newEmployee = new Employee({
       userId: savedUser._id,
       employeeId,
-      dob,
+      dob: dob ? new Date(dob).toISOString().split("T")[0] : null,
       gender,
       maritalStatus,
       designation,

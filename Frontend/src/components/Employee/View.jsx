@@ -58,7 +58,7 @@ const View = () => {
           <div className="flex justify-between items-center bg-blue-100 p-4 rounded-lg shadow hover:bg-blue-200 transition duration-300">
             <p className="font-medium text-lg">Date of Birth:</p>
             <p className="text-gray-700">
-              {new Date(employee.dob).toLocaleString()}
+              {new Date(employee.dob).toISOString().split("T")[0]}
             </p>
           </div>
           <div className="flex justify-between items-center bg-blue-100 p-4 rounded-lg shadow hover:bg-blue-200 transition duration-300">

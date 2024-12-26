@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { fetchDepartments, getEmployees } from "../../utils/EmployeeHelper";
 import axios from "axios";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 const AddSalary = () => {
   const [salary, setSalary] = useState({
     employeeId: null,
@@ -38,7 +38,7 @@ const AddSalary = () => {
 
     try {
       const response = await axios.post(
-        `http://localhost:3000/api/salary/add`,
+        "http://localhost:3000/api/salary/add",
         salary,
         {
           headers: {
@@ -46,7 +46,7 @@ const AddSalary = () => {
           },
         }
       );
-
+      console.log(response.data, "hello");
       if (response.data.success) {
         navigate("/admin-dashboard/employees");
       }
@@ -126,7 +126,7 @@ const AddSalary = () => {
                 </label>
                 <input
                   type="number"
-                  name="designation"
+                  name="basicSalary"
                   onChange={handleChange}
                   placeholder="Basic salary"
                   required

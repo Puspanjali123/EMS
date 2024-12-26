@@ -4,6 +4,7 @@ const addLeave = async (req, res) => {
   try {
     const { userId, leaveType, startDate, endDate, reason } = req.body;
     const employee = await Employee.findOne({ userId });
+    console.log("User:", employee);
     const newLeave = new Leave({
       employeeId: employee._id,
       leaveType,
@@ -55,6 +56,7 @@ const getLeaves = async (req, res) => {
         },
       ],
     });
+    console.log("leaves", leaves);
     return res.status(200).json({ success: true, leaves });
   } catch (error) {
     return res

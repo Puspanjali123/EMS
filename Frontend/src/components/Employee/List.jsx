@@ -24,7 +24,7 @@ const List = () => {
             sno: sno++,
             dept_name: emp.department.dept_name,
             name: emp.userId.name,
-            dob: new Date(emp.dob).toDateString(),
+            dob: emp.dob,
             profileImage: (
               <img src={`http://localhost:3000/${emp.userId.profileImage}`} />
             ),

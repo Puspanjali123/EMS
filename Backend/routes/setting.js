@@ -3,6 +3,6 @@ import authMiddleware from "../middleware/authMiddleware.js";
 
 import { changePassword } from "../controllers/settingController.js";
 const router = express.Router();
-router.put("/add", authMiddleware, changePassword);
+router.post("/change-password", authMiddleware, changePassword);
 
 export default router;

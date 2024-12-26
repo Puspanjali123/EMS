@@ -8,9 +8,10 @@ import {
   FaTachometerAlt,
   FaUsers,
 } from "react-icons/fa";
+import { IoCalendarNumberSharp } from "react-icons/io5";
 const AdminSidebar = () => {
   return (
-    <div className="flex flex-col  bg-gray-800 text-white w-64 h-screen">
+    <div className="flex flex-col  bg-gray-800 text-white w-64 h-auto">
       <div className="flex items-center justify-center p-4 bg-sky-700">
         <h3 className="text-2xl font-semibold text-gray-200">Employee MS</h3>
       </div>
@@ -75,6 +76,20 @@ const AdminSidebar = () => {
           <FaMoneyBillWave className="text-xl" />
           <span>Salary</span>
         </NavLink>
+
+        <NavLink
+          to="/admin-dashboard/Calender"
+          className={({ isActive }) =>
+            `${
+              isActive ? "bg-slate-500 rounded-lg" : " "
+            } flex items-center space-x-4  text-lg font-medium text-gray-300 hover:text-white hover:bg-gray-700 py-2 px-3  transition duration-200`
+          }
+          end
+        >
+          <IoCalendarNumberSharp className="text-xl" />
+          <span>Calender</span>
+        </NavLink>
+
         <NavLink
           to="/admin-dashboard/setting"
           className={({ isActive }) =>

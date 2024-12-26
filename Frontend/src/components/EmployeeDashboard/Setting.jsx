@@ -22,7 +22,7 @@ const Setting = () => {
       setError("Password not matched");
     } else {
       try {
-        const response = await axios.put(
+        const response = await axios.post(
           "http://localhost:3000/api/setting/change-password",
           setting,
           {

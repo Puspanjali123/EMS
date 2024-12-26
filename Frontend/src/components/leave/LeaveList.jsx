@@ -5,7 +5,7 @@ import { useAuth } from "../../context/authContext";
 
 const LeaveList = () => {
   const [leaves, setLeaves] = useState([]);
-  const [leaveBalance, setLeaveBalance] = useState({});
+
   let sno = 1;
   const { id } = useParams();
   const { user } = useAuth();
@@ -31,45 +31,14 @@ const LeaveList = () => {
     }
   };
 
-  const fetchLeaveBalance = async () => {
-    try {
-      const response = await axios.get(
-        `http://localhost:3000/api/leave-balance/${id}`,
-        {
-          headers: {
-            Authorization: `Bearer ${localStorage.getItem("token")}`,
-          },
-        }
-      );
-
-      if (response.data.success) {
-        setLeaveBalance(response.data.leaveBalance);
-      }
-    } catch (error) {
-      alert("Error fetching leave balance");
-    }
-  };
   useEffect(() => {
     fetchLeaves();
-    fetchLeaveBalance();
   }, []);
 
   return (
     <div className="p-6 bg-gray-100 rounded-lg shadow-md space-y-4">
       <div>
         <h3 className="text-2xl font-bold text-gray-800">Manage Leaves</h3>
-      </div>
-
-      {/* Display Leave Balance */}
-      <div className="bg-white p-4 rounded-lg shadow-md mb-4">
-        <h4 className="text-xl font-bold text-gray-800">Leave Balance</h4>
-        <ul className="mt-2 space-y-2">
-          {Object.entries(leaveBalance).map(([type, balance]) => (
-            <li key={type} className="text-gray-700">
-              {type.charAt(0).toUpperCase() + type.slice(1)}: {balance} days
-            </li>
-          ))}
-        </ul>
       </div>
 
       <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">

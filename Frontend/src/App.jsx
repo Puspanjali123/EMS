@@ -21,6 +21,7 @@ import Setting from "./components/EmployeeDashboard/Setting";
 import Table from "./components/leave/Table";
 import Detail from "./components/leave/Detail";
 import AuthContext from "./context/authContext";
+import LeaveCalender from "./components/Calender/LeaveCalender";
 
 function App() {
   return (
@@ -76,13 +77,19 @@ function App() {
 
             <Route path="/admin-dashboard/leaves" element={<Table />}></Route>
             <Route
-              path="/admin-dashboard/leaves/:id"
+              path="/admin-dashboard/leave-details/:id"
               element={<Detail />}
             ></Route>
             <Route
               path="/admin-dashboard/employees/leaves/:id"
               element={<LeaveList />}
             ></Route>
+
+            <Route
+              path="/admin-dashboard/Calender"
+              element={<LeaveCalender />}
+            ></Route>
+
             <Route
               path="/admin-dashboard/setting"
               element={<Setting />}

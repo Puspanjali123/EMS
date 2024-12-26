@@ -16,7 +16,7 @@ const addSalary = async (req, res) => {
       netSalary: totalSalary,
       payDate,
     });
-
+    console.log("new salary", newSalary);
     await newSalary.save();
     return res.status(200).json({ success: true });
   } catch (error) {

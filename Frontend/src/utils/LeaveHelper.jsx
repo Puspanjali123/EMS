@@ -46,8 +46,8 @@ export const LeaveButtons = ({ Id }) => {
   const navigate = useNavigate();
 
   const handleView = (id) => {
-    navigate(`/admin-dashboard/leaves/${id}`);
+    navigate(`/admin-dashboard/leave-details/${id}`);
   };
 
-  return <button onClick={handleView(Id)}>View</button>;
+  return <button onClick={() => handleView(Id)}>View</button>;
 };

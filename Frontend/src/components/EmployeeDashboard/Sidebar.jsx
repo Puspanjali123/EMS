@@ -12,7 +12,7 @@ import { useAuth } from "../../context/authContext";
 const Sidebar = () => {
   const { user } = useAuth();
   return (
-    <div className="flex flex-col  bg-gray-800 text-white w-64 h-screen">
+    <div className="flex flex-col  bg-gray-800 text-white w-64 h-auto">
       <div className="flex items-center justify-center p-4 bg-sky-700">
         <h3 className="text-2xl font-semibold text-gray-200">Employee MS</h3>
       </div>

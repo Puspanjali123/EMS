@@ -16,9 +16,10 @@ export const columns = [
   },
 ];
 
-export const DepartmentButtons = ({ Id, onDepartmentDelete }) => {
+export const DepartmentButtons = ({ _id, onDepartmentDelete }) => {
   const navigate = useNavigate();
   const handleDelete = async (id) => {
+    console.log("Deleting department with ID:", id);
     const confirm = window.confirm("Do you want to delete ?");
     if (confirm) {
       try {
@@ -44,13 +45,13 @@ export const DepartmentButtons = ({ Id, onDepartmentDelete }) => {
     <div className="flex space-x-4">
       <button
         className="px-6 py-2 bg-green-500 text-white font-medium rounded-lg shadow-md hover:bg-green-600 focus:ring focus:ring-blue-300 transition duration-200"
-        onClick={() => navigate(`/admin-dashboard/department/${Id}`)}
+        onClick={() => navigate(`/admin-dashboard/department/${_id}`)}
       >
         Edit
       </button>
       <button
         className="px-6 py-2 bg-red-500 text-white font-medium rounded-lg shadow-md hover:bg-red-600 focus:ring focus:ring-red-300 transition duration-200"
-        onClick={() => handleDelete(Id)}
+        onClick={() => handleDelete(_id)}
       >
         Delete
       </button>

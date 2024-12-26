@@ -108,12 +108,6 @@ const Edit = () => {
                 />
               </div>
 
-              {/* Email */}
-
-              {/* Employee ID */}
-
-              {/* Gender */}
-
               {/* Marital Status */}
               <div>
                 <label
@@ -196,12 +190,6 @@ const Edit = () => {
                   ))}
                 </select>
               </div>
-
-              {/* Password */}
-
-              {/* Role */}
-
-              {/* Upload Image */}
             </div>
 
             {/* Submit Button */}

@@ -106,17 +106,7 @@ const AddSalary = () => {
                   ))}
                 </select>
               </div>
-              {/* Employee Name */}
 
-              {/* Email */}
-
-              {/* Employee ID */}
-
-              {/* Gender */}
-
-              {/* Marital Status */}
-
-              {/* Designation */}
               <div>
                 <label
                   htmlFor="designation"

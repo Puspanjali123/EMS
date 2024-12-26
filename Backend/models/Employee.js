@@ -10,15 +10,15 @@ const leaveBalanceSchema = new Schema(
     total: {
       type: Number,
       required: true,
-      default: 0, // Default to 0, can be adjusted based on organizational policy
+      default: 0,
     },
     used: {
       type: Number,
       required: true,
-      default: 0, // Used leave starts at 0
+      default: 0,
     },
   },
-  { _id: false } // Prevent creating separate ObjectIds for leave balances
+  { _id: false }
 );
 const employeeSchema = new Schema(
   {
@@ -58,12 +58,12 @@ const employeeSchema = new Schema(
     },
 
     leaveBalances: {
-      type: [leaveBalanceSchema], // Array of leave balance objects for each leave type
+      type: [leaveBalanceSchema],
       default: [
         { leaveType: "Vacation", total: 20, used: 0 },
         { leaveType: "Sick Leave", total: 10, used: 0 },
         { leaveType: "Casual Leave", total: 5, used: 0 },
-      ], // Default leave policy
+      ],
     },
   },
   { timestamps: true }

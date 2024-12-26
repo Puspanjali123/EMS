@@ -55,12 +55,6 @@ const AdminSummary = () => {
           number={summary?.totalDepartments}
           color="text-yellow-600"
         />
-        {/* <SummaryCard
-          icon={<FaMoneyBillWave />}
-          text="Monthly Salary"
-          number={summary?.totalSalary}
-          color="text-yellow-600"
-        /> */}
       </div>
       <div className="mt-12">
         <h4 className="text-center text-2xl font-bold">Leave Details</h4>

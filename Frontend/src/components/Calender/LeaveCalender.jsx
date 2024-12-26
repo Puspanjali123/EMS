@@ -54,16 +54,15 @@ const LeaveCalender = () => {
   function transformLeaveData(rawData) {
     return rawData.map((leave) => {
       return {
-        title: `${leave.name}'s ${leave.leaveType}`, // Constructing the title
-        start: new Date(leave.startDate), // Replace with the correct start date
-        end: new Date(leave.endDate), // Replace with the correct end date
+        title: `${leave.name}'s ${leave.leaveType}`,
+        start: new Date(leave.startDate),
+        end: new Date(leave.endDate),
         status: leave.status,
         type: leave.leaveType,
       };
     });
   }
 
-  // Open modal on date click
   const handleDateClick = (slotInfo) => {
     setSelectedDate(slotInfo.start);
     setModalOpen(true);
@@ -73,18 +72,17 @@ const LeaveCalender = () => {
     setEventsForSelectedDate(eventsForSelectedDate);
   };
 
-  // Close modal
   const closeModal = () => {
     setModalOpen(false);
     setSelectedDate(null);
   };
 
   const eventStyleGetter = (event) => {
-    let backgroundColor = "#3174ad"; // Default color
+    let backgroundColor = "#3174ad";
 
-    if (event.status === "approved") backgroundColor = "#28a745"; // Green
-    else if (event.status === "Pending") backgroundColor = "#ffc107"; // Yellow
-    else if (event.status === "Rejected") backgroundColor = "#dc3545"; // Red
+    if (event.status === "approved") backgroundColor = "#28a745";
+    else if (event.status === "Pending") backgroundColor = "#ffc107";
+    else if (event.status === "Rejected") backgroundColor = "#dc3545";
 
     return {
       style: {
@@ -108,9 +106,9 @@ const LeaveCalender = () => {
         defaultView="month"
         views={["month"]}
         className="h-full"
-        selectable // Enable date selection
-        onSelectSlot={handleDateClick} // Handle date click
-        eventPropGetter={eventStyleGetter} // Apply custom styling
+        selectable
+        onSelectSlot={handleDateClick}
+        eventPropGetter={eventStyleGetter}
       />
 
       {isModalOpen && (
